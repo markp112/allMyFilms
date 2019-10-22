@@ -1,0 +1,25 @@
+/* Color Theme Swatches in Hex */
+$map-1-hex: #2a1a5e;
+$map-2-hex: #f45905;
+$map-3-hex: #fb9224;
+$map-4-hex: #fbe555;
+$map-5-hex: #C2B9A9;
+
+/* Color Theme Swatches in RGBA */
+$map-1-rgba: rgba(117,112,102, 1);
+$map-2-rgba: rgba(246,209,140, 1);
+$map-3-rgba: rgba(244,233,212, 1);
+$map-4-rgba: rgba(117,100,66, 1);
+$map-5-rgba: rgba(193,184,168, 1);
+//navbar
+$navbar-height: 60px;
+$navbar-background:  $map-1-hex;
+$navbar-color: $map-2-hex;
+$navbar-hover: $map-3-hex;
+//font
+$font-family: 'Asap', sans-serif; 
+$font-size: 1em;
+//selects
+$select-font-size: 1em;
+
+$control-panel-pos-left: 2%;

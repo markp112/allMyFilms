@@ -1,0 +1,17 @@
+//vendor
+@import './vendor/resetcss';
+
+//modules
+@import './modules/variables';
+@import './modules/responsiveness';
+
+//component 
+@import './components/layouts';
+@import './components/nav';
+
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Noto Sans', sans-serif;
+}

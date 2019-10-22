@@ -1,0 +1,52 @@
+nav {
+    background-color: $navbar-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: $navbar-height;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    #lhs-nav {
+        width: 100px;
+    }
+    #rhs-nav {
+        width: 40%;
+        padding: 20px;
+        input {
+            border-radius: 1.5em 0 1.5em 0;
+            height: 2em;
+            padding: 5px;
+            width: 175px;
+        }
+    }
+    i {
+        padding: calc((#{$navbar-height} - 32px) * 0.5);
+    }
+
+    ul.links {
+        display: none;
+
+        @include sm {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            float: right;
+        }
+
+        li {
+            color: $navbar-color;
+            padding: 5px 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+
+            &:hover{
+                color:$navbar-hover;
+                cursor: pointer;
+            }
+        }
+    }
+}

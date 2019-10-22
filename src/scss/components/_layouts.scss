@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 0.3fr 2.5fr 0.2fr;
+    grid-template-areas: "nav nav" "control-panel content" "control-panel footer";
+}
+
+
+
+.control-panel { grid-area: control-panel; }
+
+.footer { grid-area: footer; }
+
+.content { grid-area: content; }

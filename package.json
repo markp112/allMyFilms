@@ -1,0 +1,35 @@
+{
+  "name": "allMyFilms",
+  "version": "1.0.0",
+  "description": "A movie database using OMDB",
+  "main": "index.js",
+  "repository": "https://github.com/markp112/allMyFilms.git",
+  "author": "Mark Phillips <mark.phillips1965@googlemail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "@types/node": "^12.11.2",
+    "jest": "^24.9.0",
+    "sass": "^1.23.0",
+    "tslint": "^5.20.0",
+    "webpack": "^4.41.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch-js": "yarn run build-js --watch",
+    "build-js": "webpack",
+    "watch-sass": "yarn run build-sass --watch",
+    "build-sass": "node-sass src/scss/main.scss -o dist",
+    "build": "yarn run build-js && yarn run build-sass"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "preset": "ts-jest"
+  },
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.4",
+    "webpack-cli": "^3.3.9"
+  }
+}
