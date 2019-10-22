@@ -1,5 +1,4 @@
 {
-  "name": "allMyFilms",
   "version": "1.0.0",
   "description": "A movie database using OMDB",
   "main": "index.js",

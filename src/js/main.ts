@@ -1,4 +1,4 @@
-import {searchMovie} from './movies/movie'
+import { searchMovie } from './movies/movie'
 
 //put event handlers onto form controls
 const attachEventHandlers = ():void => {

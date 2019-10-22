@@ -1,14 +1,24 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 0.5fr 1.5fr;
-    grid-template-rows: 0.3fr 2.5fr 0.2fr;
-    grid-template-areas: "nav nav" "control-panel content" "control-panel footer";
+    grid-template-columns: 0.2fr 1.5fr;
+    grid-template-rows: 0.175fr 3fr 0.2fr;
+    grid-template-areas: "nav nav" 
+                        "control-panel content" 
+                        "control-panel footer";
 }
 
-
-
-.control-panel { grid-area: control-panel; }
+.control-panel { 
+    grid-area: control-panel; 
+    height: 100vh;
+    background-color: $map-5-hex;
+}
 
 .footer { grid-area: footer; }
 
-.content { grid-area: content; }
+.content { 
+    grid-area: content; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

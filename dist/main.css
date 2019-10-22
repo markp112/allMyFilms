@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
 License: none (public domain)
 */
@@ -48,18 +51,24 @@ table {
 /* Color Theme Swatches in RGBA */
 .grid-container {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
-  grid-template-rows: 0.3fr 2.5fr 0.2fr;
-  grid-template-areas: "nav nav" "control-panel content" "control-panel footer"; }
+  grid-template-columns: 0.2fr 1.5fr;
+  grid-template-rows: 0.175fr 3fr 0.2fr;
+  grid-template-areas: "nav nav"  "control-panel content"  "control-panel footer"; }
 
 .control-panel {
-  grid-area: control-panel; }
+  grid-area: control-panel;
+  height: 100vh;
+  background-color: #C2B9A9; }
 
 .footer {
   grid-area: footer; }
 
 .content {
-  grid-area: content; }
+  grid-area: content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
 
 nav {
   background-color: #2a1a5e;
@@ -101,8 +110,38 @@ nav {
         color: #fb9224;
         cursor: pointer; }
 
-* {
-  box-sizing: border-box; }
+.card {
+  width: 200px;
+  height: 330px;
+  margin: 20px;
+  -webkit-box-shadow: 10px 10px 13px -6px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 10px 10px 13px -6px rgba(0, 0, 0, 0.69);
+  box-shadow: 10px 10px 13px -6px rgba(0, 0, 0, 0.69); }
+  .card:hover {
+    -webkit-box-shadow: 15px 21px 13px -6px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: 15px 21px 13px -6px rgba(0, 0, 0, 0.69);
+    box-shadow: 15px 21px 13px -6px rgba(0, 0, 0, 0.69);
+    cursor: pointer; }
+  .card .card-header {
+    background-color: #2a1a5e;
+    color: #fbe555;
+    height: 40px;
+    width: 100%; }
+    .card .card-header p {
+      padding: 10px;
+      font-size: 0.8em; }
+  .card .card-body {
+    background-color: #C2B9A9; }
+    .card .card-body img {
+      width: 100%;
+      height: 250px; }
+  .card .card-footer {
+    background-color: #C2B9A9;
+    height: 40px; }
+    .card .card-footer p {
+      padding: 2px;
+      margin-left: 5px;
+      font-size: 0.8em; }
 
 body {
   font-family: 'Noto Sans', sans-serif; }

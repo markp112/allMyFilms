@@ -1,3 +1,7 @@
+
+* {
+    box-sizing: border-box;
+}
 //vendor
 @import './vendor/resetcss';
 
@@ -8,10 +12,9 @@
 //component 
 @import './components/layouts';
 @import './components/nav';
+@import './components/card';
 
-*{
-    box-sizing: border-box;
-}
+
 body {
     font-family: 'Noto Sans', sans-serif;
 }
