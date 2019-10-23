@@ -187,31 +187,43 @@ nav {
       color: #f45905;
       font-size: 1.5em; }
   nav #rhs-nav {
-    width: 70%;
+    width: 60%;
     padding: 10px;
-    margin-right: 20px; }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly; }
     nav #rhs-nav input {
       border-radius: 1.5em 0 1.5em 0;
       height: 2em;
       padding: 5px;
       width: 200px;
       font-size: 1.2em; }
+      nav #rhs-nav input::before {
+        border: none; }
     nav #rhs-nav ul.links {
-      display: none; }
-      @media (min-width: 576px) {
-        nav #rhs-nav ul.links {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          float: right; } }
+      margin: 10px; }
       nav #rhs-nav ul.links li {
         color: #f45905;
         padding: 5px 10px;
-        font-size: 1.5em;
-        font-weight: bold; }
+        font-size: 1.2em;
+        font-weight: bold;
+        position: relative;
+        display: inline; }
         nav #rhs-nav ul.links li:hover {
           color: #fb9224;
           cursor: pointer; }
+        nav #rhs-nav ul.links li span {
+          position: absolute;
+          top: -4px;
+          right: 0px;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background-color: #fbe555;
+          color: #2a1a5e;
+          font-size: 0.7em;
+          padding: 4px 6px; }
 
 .card {
   width: 200px;

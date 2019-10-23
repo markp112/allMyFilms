@@ -1,8 +1,9 @@
 import { getNextMovies } from "./movies/omdbCalls";
 import { globalData } from "./classes/globals";
 import { getSearchString } from "./movies/utilities";
-import { displayMovie } from "./movies/display";
+import { displayMovie, updatePill } from "./movies/display";
 import { addFilmsToGlobalData } from './movies/movie';
+import { addToLocalStorage, categoryTypes } from "./localStorage/localStorage";
 
 const getNextMoviesSet = () => {
     globalData.currentPage++;
@@ -20,3 +21,9 @@ export const scrollPage = (e): void => {
         getNextMoviesSet();
     };
 };
+
+export const addToWatched = (imdbID: string):void => {
+    console.log("addToWatched");
+    let itemCount = addToLocalStorage(categoryTypes.WatchedMovie, imdbID);
+    updatePill(categoryTypes.WatchedMovie ,itemCount)
+}

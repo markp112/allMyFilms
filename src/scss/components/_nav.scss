@@ -19,9 +19,12 @@ nav {
         }
     }
     #rhs-nav {
-        width: 70%;
+        width: 60%;
         padding: 10px;
-        margin-right: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
 
         input {
             border-radius: 1.5em 0 1.5em 0;
@@ -29,28 +32,39 @@ nav {
             padding: 5px;
             width: 200px;
             font-size: 1.2em;
+            
+            &::before {
+                border: none;
+            }
         }
         
 
     ul.links {
-        display: none;
-        
-        @include sm {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            float: right;
-        }
-
+        margin: 10px;
         li {
             color: $navbar-color;
             padding: 5px 10px;
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: bold;
+            position: relative;
+            display: inline;
 
             &:hover{
                 color:$navbar-hover;
                 cursor: pointer;
+            }
+
+            span {
+                position: absolute;
+                top: -4px;
+                right: 0px;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: $map-4-hex;
+                color: $map-1-hex;
+                font-size: 0.7em;
+                padding: 4px 6px;
             }
         }
     }
