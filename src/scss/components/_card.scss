@@ -10,9 +10,7 @@
     -webkit-box-shadow: 15px 21px 13px -6px rgba(0,0,0,0.69);
     -moz-box-shadow: 15px 21px 13px -6px rgba(0,0,0,0.69);
     box-shadow: 15px 21px 13px -6px rgba(0,0,0,0.69);
-    cursor: pointer;
   }
-
 
   .card-header {
     background-color: $map-1-hex;
@@ -38,12 +36,26 @@
 
     background-color: $map-5-hex;
     height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div {
+      width:100%;
 
-     
-    p {
-      padding: 2px;
-      margin-left: 5px;
-      font-size: $card-font-size;
+      p {
+        padding: 2px;
+        margin-left: 5px;
+        font-size: $card-font-size;
+        display: inline-block;
+        width: 85%;
+      }
+      i {
+        align-self: flex-end;
+        cursor: pointer;
+        color: $map-3-hex;
+      }
+
     }
+    
   }
 }

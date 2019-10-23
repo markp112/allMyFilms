@@ -1,35 +1,44 @@
 export class IMovie {
-    _title:string;
-    _year:string;
+    _title: string;
+    _year: string;
     _imdbID: string;
     _type: string;
     _poster: string;
+    _emptyPoster:string = '/src/assets/film.png';
 
-    constructor ( title: string, year:string, imdbID:string, type: string, poster:string) {
+    constructor(
+        title: string,
+        year: string,
+        imdbID: string,
+        type: string,
+        poster: string
+    ) {
         this._title = title;
         this._year = year;
         this._type = type;
         this._imdbID = imdbID;
-        this._poster = poster;
+        if(poster === 'N/A') {  
+            this._poster = this._emptyPoster
+        }else this._poster = poster;
     }
 
-    get title():string {
+    get title(): string {
         return this._title;
     }
 
-    get poster ():string {
+    get poster(): string {
         return this._poster;
     }
-    
-    get year ():string {
+
+    get year(): string {
         return this._year;
     }
 
-    get imdbID ():string {
-        return this._imdbID
+    get imdbID(): string {
+        return this._imdbID;
     }
 
-    get type():string {
+    get type(): string {
         return this._type;
     }
 }

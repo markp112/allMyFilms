@@ -1,24 +1,62 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 0.2fr 1.5fr;
-    grid-template-rows: 0.175fr 3fr 0.2fr;
-    grid-template-areas: "nav nav" 
-                        "control-panel content" 
-                        "control-panel footer";
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-rows: 0.175fr 3fr;
+    grid-template-areas:
+        "nav nav"
+        "control-panel content";
 }
 
-.control-panel { 
-    grid-area: control-panel; 
+.control-panel {
+    width: 200px;
+    grid-area: control-panel;
     height: 100vh;
     background-color: $map-5-hex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    color: $darkcolor;
+
+    p {
+        padding: 10px;
+        color: $darkcolor;
+    }
+
+    .year-picker {
+        margin: 40px 5px;
+
+        label {
+            padding: 10px;
+            color: $darkcolor;
+        }
+
+        input {
+            background: lighten($accentcolor, 30%);
+            border-radius: 5px;
+            padding: 10px 30px 10px 5px;
+            border: 2px solid lighten($accentcolor, 20%);
+            width: 85%;
+            font-size: 1.2em;
+            color: $darkcolor;
+        }
+    }
+
+    @include radio-style;
 }
 
-.footer { grid-area: footer; }
+.footer {
+    grid-area: footer;
+}
 
-.content { 
-    grid-area: content; 
+.content {
+    margin-top: 20px;
+    grid-area: content;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    scroll-behavior: smooth;
 }

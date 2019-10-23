@@ -8,28 +8,33 @@ nav {
     height: $navbar-height;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between ;
 
     #lhs-nav {
-        width: 100px;
+        width: 150px;
+        p {
+            margin-top: 10px;
+            color: $map-2-hex;
+            font-size: 1.5em;
+        }
     }
     #rhs-nav {
-        width: 40%;
-        padding: 20px;
+        width: 70%;
+        padding: 10px;
+        margin-right: 20px;
+
         input {
             border-radius: 1.5em 0 1.5em 0;
             height: 2em;
             padding: 5px;
-            width: 175px;
+            width: 200px;
+            font-size: 1.2em;
         }
-    }
-    i {
-        padding: calc((#{$navbar-height} - 32px) * 0.5);
-    }
+        
 
     ul.links {
         display: none;
-
+        
         @include sm {
             display: flex;
             flex-direction: row;
@@ -49,4 +54,8 @@ nav {
             }
         }
     }
+
+    }
+
+
 }
