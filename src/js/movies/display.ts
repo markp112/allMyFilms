@@ -1,13 +1,11 @@
-import { IGlobals, globalData } from "../classes/globals";
+import { globalData } from "../classes/globals";
 import { categoryTypes } from "../localStorage/localStorage";
-import {addToWatched} from "../eventHandlers";
+import { addToWatched, addToBookmarks, movieCardClicked } from "../eventHandlers";
+import { IMovie } from "../classes/movieClass";
 
 const createCardHead = (title: string, hasWatched: boolean): string => {
     const wrapper: string = "<div class='card-header'>";
     const p: string = `<p>${title}</p>`;
-    // const i: string = hasWatched
-    //     ? '<i class="fas fa-binoculars watched"></i>'
-    //     : '<i class="fas fa-binoculars"></i>';
     const closeTag: string = "</div>";
     return `${wrapper}${p}${closeTag}`;
 };
@@ -29,23 +27,27 @@ const createCardFooter = (year: string, imdbID: string): string => {
     return `${wrapper}${p}${watched}${pimdb}${bookmark}${closeTag}`;
 };
 
+const putCardOnScreen = (movie:IMovie):void => {
+    let contentContainer = document.querySelector(".content");
+    const cardHead = createCardHead(movie.title, false);
+    const cardBody = createCardBody(movie.poster);
+    const cardFooter = createCardFooter(movie.year, movie.imdbID);
+    const card = `${cardHead}${cardBody}${cardFooter}`;
+    let card1  = document.createElement("div")
+    card1.setAttribute("class", "card" );
+    card1.innerHTML = card;
+    card1.querySelector('.card-body').addEventListener('click',() => movieCardClicked(movie.imdbID));
+    card1.querySelector('.fa-binoculars').addEventListener('click',() => addToWatched(movie.imdbID));
+    card1.querySelector('.fa-bookmark').addEventListener('click',() => addToBookmarks(movie.imdbID));
+    contentContainer.appendChild(card1)
+}
+
 export const displayMovie = (): void => {
     let contentContainer = document.querySelector(".content");
     contentContainer.innerHTML = "";
     try {
         globalData.movies.forEach(movie => {
-            const cardHead = createCardHead(movie.title, false);
-            const cardBody = createCardBody(movie.poster);
-            const cardFooter = createCardFooter(movie.year, movie.imdbID);
-            const card = `${cardHead}${cardBody}${cardFooter}`;
-            let card1  = document.createElement("div")
-            card1.setAttribute("class", "card" );
-            card1.innerHTML = card;
-            card1.querySelector('.fa-binoculars').addEventListener('click',() => addToWatched(movie.imdbID));
-            console.log('card1.querySelector(\'.fa-binoculars\') :', card1.querySelector('.fa-binoculars'));
-            card1.querySelector('.fa-bookmark').addEventListener('click',() => `addToBookmarks(${movie.imdbID})`);
-            console.log(card1)
-            contentContainer.appendChild(card1)
+            putCardOnScreen(movie)
         });
     } catch (error) {
         //output  errors to console to aid debbugging should be removed from final production code.

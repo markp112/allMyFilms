@@ -27,11 +27,15 @@
                 />
 
                 <ul class="links">
-                    <li>Watched Movies<span id="watchedCount">0</span></li>
-                    <li>To watch <span id="toWatchCount">0</span></li>
+                    <li id="watched-movies-link">Watched Movies<span id="watchedCount">0</span></li>
+                    <li id="to-watch-link">To watch <span id="toWatchCount">0</span></li>
                 </ul>
             </div>
         </nav>
+        <section id="modal-popup" class="modal-popup modal-hidden">
+            <div class="close-button" ><p>X</p></div>
+            <div class="modal-content"></div>
+        </section>
         <div class="grid-container">
             <div class="control-panel">
                 <div id='matching-films'>
@@ -77,5 +81,6 @@
             </div>
             <div class="content"></div>
         </div>
+       
     </body>
 </html>

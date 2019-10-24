@@ -1,0 +1,57 @@
+
+@mixin modal-popup {
+
+  .modal-visible {
+    display: block;
+  }
+
+  .modal-hidden {
+    display: none;
+  }
+
+  .modal-popup {
+    overflow: scroll;
+    position: fixed;
+    z-index: 1;
+    padding: 5px;
+    left: 10px;
+    top: 0.1*(100vh);
+    width: 90%;
+    max-width: 600px;
+    height: 80%;
+    background-color: rgba(252, 247, 247, 0.98); 
+    box-shadow: 10px 10px 10px 5px rgb(46, 45, 45);
+    border: 2px solid darkblue;
+    border-radius: 7px;
+      
+    h2 {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    p {
+      padding: 10px;
+      font-size: 0.8em;
+    }
+
+    .close-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      p {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        padding: 0px;
+        text-align: center;
+
+        &:hover{
+          cursor:   pointer;
+          background-color: gray;
+          color: white;
+        }
+      }
+    }
+  }
+}

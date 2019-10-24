@@ -49,6 +49,47 @@ table {
 
 /* Color Theme Swatches in Hex */
 /* Color Theme Swatches in RGBA */
+.modal-visible {
+  display: block; }
+
+.modal-hidden {
+  display: none; }
+
+.modal-popup {
+  overflow: scroll;
+  position: fixed;
+  z-index: 1;
+  padding: 5px;
+  left: 10px;
+  top: 10vh;
+  width: 90%;
+  max-width: 600px;
+  height: 80%;
+  background-color: rgba(252, 247, 247, 0.98);
+  box-shadow: 10px 10px 10px 5px #2e2d2d;
+  border: 2px solid darkblue;
+  border-radius: 7px; }
+  .modal-popup h2 {
+    text-align: center;
+    margin-top: 10px; }
+  .modal-popup p {
+    padding: 10px;
+    font-size: 0.8em; }
+  .modal-popup .close-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; }
+    .modal-popup .close-button p {
+      width: 25px;
+      height: 25px;
+      font-size: 16px;
+      padding: 0px;
+      text-align: center; }
+      .modal-popup .close-button p:hover {
+        cursor: pointer;
+        background-color: gray;
+        color: white; }
+
 .grid-container {
   display: grid;
   grid-template-columns: 0.5fr 2fr;
@@ -74,7 +115,9 @@ table {
     margin: 40px 5px; }
     .control-panel .year-picker label {
       padding: 10px;
-      color: #f45905; }
+      color: #f45905;
+      margin-bottom: 5px;
+      display: inline-block; }
     .control-panel .year-picker input {
       background: #feddba;
       border-radius: 5px;
@@ -157,9 +200,6 @@ table {
   100% {
     background-color: #fcb76f; } }
 
-.footer {
-  grid-area: footer; }
-
 .content {
   margin-top: 20px;
   grid-area: content;
@@ -194,7 +234,7 @@ nav {
     flex-wrap: nowrap;
     justify-content: space-evenly; }
     nav #rhs-nav input {
-      border-radius: 1.5em 0 1.5em 0;
+      border-radius: 1em 0 1em 0;
       height: 2em;
       padding: 5px;
       width: 200px;

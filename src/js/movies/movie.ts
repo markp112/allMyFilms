@@ -29,3 +29,15 @@ export const searchMovie = (): void => {
         displayMaxMovies();
     });
 };
+
+export const addMoviesToGlobalData = (movies:Array<IMovie>):void => {
+    movies.forEach(movie =>{ 
+        let classMovie = new IMovie(
+            movie._title,
+            movie._year,
+            movie._imdbID,
+            movie._type,
+            movie._poster
+        );
+        globalData.addMovie(classMovie)});
+}

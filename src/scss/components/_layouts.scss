@@ -1,3 +1,7 @@
+
+@include  modal-popup;
+
+
 .grid-container {
     display: grid;
     grid-template-columns: 0.5fr 2fr;
@@ -31,6 +35,8 @@
         label {
             padding: 10px;
             color: $darkcolor;
+            margin-bottom: 5px;
+            display: inline-block;
         }
 
         input {
@@ -47,10 +53,6 @@
     @include radio-style;
 }
 
-.footer {
-    grid-area: footer;
-}
-
 .content {
     margin-top: 20px;
     grid-area: content;
@@ -60,3 +62,4 @@
     justify-content: space-evenly;
     scroll-behavior: smooth;
 }
+
