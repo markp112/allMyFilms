@@ -10,27 +10,38 @@
   }
 
   .modal-popup {
-    overflow: scroll;
+    background-image: url('/src/assets/background-popup.jpg');
+    opacity: 0.95;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    background-position-y: -20px;
+    background-color: azure;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     position: fixed;
     z-index: 1;
-    padding: 5px;
-    left: 10px;
+    left: 5%;
     top: 0.1*(100vh);
     width: 90%;
     max-width: 600px;
     height: 80%;
-    background-color: rgba(252, 247, 247, 0.98); 
-    box-shadow: 10px 10px 10px 5px rgb(46, 45, 45);
-    border: 2px solid darkblue;
-    border-radius: 7px;
+   
+    
+    -webkit-box-shadow: 10px 10px 12px -2px rgba(0,0,0,0.38);
+    -moz-box-shadow: 10px 10px 12px -2px rgba(0,0,0,0.38);
+    box-shadow: 10px 10px 12px -2px rgba(0,0,0,0.38);
+    border: 2px solid $map-1-hex;
+    border-radius: 12px 12px 12px 12px;
       
     h2 {
       text-align: center;
-      margin-top: 10px;
+      margin-bottom: $content-spacing;
     }
 
     p {
-      padding: 10px;
+      padding: $content-spacing;
       font-size: 0.8em;
     }
 
@@ -42,14 +53,56 @@
       p {
         width: 25px;
         height: 25px;
-        font-size: 16px;
-        padding: 0px;
+        font-size: 1.2em;
+        font-weight: 700;
+        padding: $content-spacing / 5;
         text-align: center;
+        color: black;
+        background-color: darkgrey;
 
         &:hover{
-          cursor:   pointer;
+          cursor: pointer;
           background-color: gray;
           color: white;
+        }
+      }
+    }
+    .modal-content {
+    
+      width: 100%;
+      padding: $content-spacing / 2;
+      font-size: 1.1em;
+      font-weight: 700;
+      line-height: 1.1em;;
+      color: $map-2-hex;
+      display: grid;
+      grid-template-columns: 1.5fr 4fr 1.5fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "margin-left content margin-right";
+      justify-content: center;
+      align-items: left;
+      
+      .margin-left {
+        grid-area: margin-left;
+        width: 2%;
+      }
+      .margin-right {
+        grid-area: margin-right;
+        width: 2%;
+      }
+      .popup-content {
+        grid-area: content;
+          width: 100%;
+        p {
+            padding: $content-spacing / 2;
+        }
+        span {
+          font-weight: 900;
+          color: $map-1-hex;
+          
+        }
+        .rating {
+          margin-left: 60px;
         }
       }
     }

@@ -13,15 +13,19 @@ $map-4-rgba: rgba(117,100,66, 1);
 $map-5-rgba: rgba(193,184,168, 1);
 //navbar
 $navbar-height: 60px;
+$navbar-content-margin: $navbar-height / 6;
 $navbar-background:  $map-1-hex;
 $navbar-color: $map-2-hex;
 $navbar-hover: $map-3-hex;
 //font
-
 $font-size: 1em;
+$content-spacing: 10px;
 //selects
 
 $card-font-size: 0.8em;
 
 $accentcolor: $map-3-hex;
 $darkcolor: $map-2-hex;
+
+//control panel items
+$control-width: 85%;

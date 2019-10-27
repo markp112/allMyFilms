@@ -3,10 +3,10 @@
 
 @mixin radio-style {
     .movie-type {
-        width: 100px;
-        max-width: 100px;
+        width: $control-width;
+        max-width: $control-width;
         position: relative;
-        margin: 0px auto 0;
+        margin: 0px $content-spacing;
         font-size: 15px;
 
         .radiobtn {

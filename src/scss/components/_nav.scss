@@ -9,67 +9,133 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between ;
+    z-index: 2;
+    color: $map-2-hex;
+    i {
+        font-size: 2em;
+    }
 
     #lhs-nav {
-        width: 150px;
-        p {
-            margin-top: 10px;
-            color: $map-2-hex;
-            font-size: 1.5em;
-        }
-    }
-    #rhs-nav {
-        width: 60%;
-        padding: 10px;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        align-items: center;
+        width: 25vw;
+        
+        p {
+            font-size: 1.5em;
+            padding: $content-spacing;
+            display: none;
+        }
 
+        @include sm { 
+            p {
+                display: inline-block;
+            }
+        }
+    }
+
+    #rhs-nav {
+        width: 50vw;
+        padding: $content-spacing;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        
         input {
             border-radius: 1em 0 1em 0;
             height: 2em;
             padding: 5px;
             width: 200px;
-            font-size: 1.2em;
-            
-            &::before {
-                border: none;
-            }
-        }
-        
+        }   
 
-    ul.links {
-        margin: 10px;
-        li {
-            color: $navbar-color;
-            padding: 5px 10px;
-            font-size: 1.2em;
-            font-weight: bold;
+        .item-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             position: relative;
-            display: inline;
+            width: 100px;
+            align-items: flex-end;
 
-            &:hover{
-                color:$navbar-hover;
-                cursor: pointer;
-            }
-
-            span {
+            .links {
+                display: none;
                 position: absolute;
-                top: -4px;
-                right: 0px;
-                height: 20px;
-                width: 20px;
-                border-radius: 50%;
-                background-color: $map-4-hex;
-                color: $map-1-hex;
-                font-size: 0.7em;
-                padding: 4px 6px;
+                top: $navbar-height - $content-spacing + 2px;
+                left: -65px;
+                width: 150px;
+                font-size: 0.8em;
+                border: 1px solid grey;
+                background-color: $map-5-hex;
+                padding: $content-spacing; 
+
+                &.show-links {
+                    display: unset;
+                }
+
+                li {
+                    margin: $content-spacing * 0.5;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    position: relative;
+                    display: inline-block;
+
+                    &:hover{
+                        color:$navbar-hover;
+                        cursor: pointer;
+                    }
+
+                    span {
+                        position: absolute;
+                        top: -8px;
+                        right: -20px;
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        background-color: $map-4-hex;
+                        color: $map-1-hex;
+                        font-size: 0.7em;
+                        padding: 4px 6px;
+                    }
+                }
+
             }
-        }
     }
 
+        @include md {
+            .fa-bars {
+                display: none;
+            }
+
+            .item-menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                position: unset;
+                width: 100%;     
+
+                .links {
+                    position: unset;
+                    display: unset;
+                    font-size: unset;
+                    border: unset;
+                    background-color: unset;
+                    width: 60%;
+
+                    li {
+                        display: inline-block;
+                        margin-left: $content-spacing * 1.5;
+                        span {
+                            top: -8px;
+                            right: -15px;
+                            height: 20px;
+                            width: 20px;
+                            border-radius: 50%;
+                            background-color: $map-4-hex;
+                            color: $map-1-hex;
+                        }
+                    }
+                }
+            }
     }
-
-
+    }
 }

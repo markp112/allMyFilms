@@ -16,6 +16,7 @@
     <body>
         <nav>
             <div id="lhs-nav">
+                <i class="fas fa-film"></i>
                 <p>All My Films</p>
             </div>
             <div id="rhs-nav">
@@ -25,22 +26,26 @@
                     placeholder="search for movie"
                     id="movie-search"
                 />
-
-                <ul class="links">
-                    <li id="watched-movies-link">Watched Movies<span id="watchedCount">0</span></li>
-                    <li id="to-watch-link">To watch <span id="toWatchCount">0</span></li>
-                </ul>
+                <div class="item-menu">
+                    <i class="fas fa-bars"></i>
+                    <ul class="links">
+                        <li id="watched-movies-link">Watched <span id="watchedCount">0</span></li>
+                        <li id="to-watch-link">To Watch <span id="toWatchCount">0</span></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <section id="modal-popup" class="modal-popup modal-hidden">
-            <div class="close-button" ><p>X</p></div>
-            <div class="modal-content"></div>
+            <div class="close-button"><p>X</p></div>
+            <div class="modal-content">
+                <div class="margin-left"></div>
+                <div class="popup-content"></div>
+                <div class="margin-right"></div>
+            </div>
         </section>
         <div class="grid-container">
             <div class="control-panel">
-                <div id='matching-films'>
-                    <p>Movies found:<span></span></p>
-                </div>
+                
                 <div class="year-picker">
                     <label for="year">Year</label>
                     <input type="year" name="year" id="year-picker" />
@@ -53,7 +58,6 @@
                             id="movie"
                             name="movie-type"
                             value="movie"
-                            checked
                         />
                         <label for="movie">Movie</label>
                     </div>
@@ -71,12 +75,15 @@
                     <div class="radiobtn">
                         <input
                             type="radio"
-                            id="Episode"
+                            id="episode"
                             name="movie-type"
                             value="Episode"
                         />
                         <label for="Episode">Episode</label>
                     </div>
+                </div>
+                <div id='matching-films'>
+                    <p>Movies Found:<span></span></p>
                 </div>
             </div>
             <div class="content"></div>
